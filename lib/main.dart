@@ -1,74 +1,31 @@
-import 'package:google_fonts/google_fonts.dart'; /* style: GoogleFonts.lato(), */
-/* setState(() {
-          selected = !selected;
-        }); */
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'Screens/HomePage.dart';
 
-/// This is the main application widget.
-class MyApp extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
+void main() async {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  MyApp({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: CrossFade(),
-      ),
-    );
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
   }
-}
 
-class CrossFade extends StatefulWidget {
-  CrossFade({Key key}) : super(key: key);
-
-  @override
-  _CrossFadeState createState() => _CrossFadeState();
-}
-
-class _CrossFadeState extends State<CrossFade> {
-  bool isFormSubmitted = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        body: Center(
-          child: Container(
-            child: AnimatedCrossFade(
-              firstChild: Form(
-                child: Column(
-                  children: [
-                    TextFormField(),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    TextFormField(),
-                    TextButton(
-                        onPressed: () {
-                          setState(() {
-                            isFormSubmitted = true;
-                          });
-                        },
-                        child: Text("Buttonnn"))
-                  ],
-                ),
-              ),
-              secondChild: Container(
-                color: Colors.blue,
-                padding: EdgeInsets.all(16),
-                child: Text("Action complete"),
-              ),
-              duration: Duration(seconds: 1),
-              crossFadeState: isFormSubmitted
-                  ? CrossFadeState.showSecond
-                  : CrossFadeState.showFirst,
-            ),
-          ),
-        ),
-      ),
+    return GetMaterialApp(
+      title: 'Home',
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
     );
   }
 }
