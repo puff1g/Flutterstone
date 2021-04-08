@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const primaryColor = const Color(0xFFF5F5F5);
 const secondarColor = const Color(0xFFFFFFFF);
-const theclr = const Color(0xFF433FC7);
+const theclr = const Color(0xFF2B26B8);
 const someclr = const Color(0xFFD0071E);
 
 var ioicon = Colors.white;
