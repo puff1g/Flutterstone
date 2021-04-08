@@ -14,7 +14,7 @@ class _TransactionssState extends State<Transactionss> {
     final size = MediaQuery.of(context).size;
     return Container(
         child: Container(
-      height: size.height * 0.45,
+      height: size.height * 1,
       width: size.width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.vertical(
@@ -55,10 +55,7 @@ class _TransactionssState extends State<Transactionss> {
                         Text("Spotify Subscr.",
                             style: TextStyle(color: white, fontSize: 15)),
                         Text("Subscription",
-                            style: TextStyle(
-                                /*TODO Float text left  */
-                                color: Colors.grey,
-                                fontSize: 12)),
+                            style: TextStyle(color: Colors.grey, fontSize: 12)),
                       ],
                     ),
                   ),
@@ -98,10 +95,7 @@ class _TransactionssState extends State<Transactionss> {
                         Text("Spotify Subscr.",
                             style: TextStyle(color: white, fontSize: 15)),
                         Text("Subscription",
-                            style: TextStyle(
-                                /*TODO Float text left  */
-                                color: Colors.grey,
-                                fontSize: 12)),
+                            style: TextStyle(color: Colors.grey, fontSize: 12)),
                       ],
                     ),
                   ),
@@ -141,10 +135,87 @@ class _TransactionssState extends State<Transactionss> {
                         Text("Spotify Subscr.",
                             style: TextStyle(color: white, fontSize: 15)),
                         Text("Subscription",
-                            style: TextStyle(
-                                /*TODO Float text left  */
-                                color: Colors.grey,
-                                fontSize: 12)),
+                            style: TextStyle(color: Colors.grey, fontSize: 12)),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 135,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Column(
+                      children: [
+                        Text("- £24.00",
+                            style: TextStyle(color: white, fontSize: 15)),
+                        Text("12 March 2021",
+                            style: TextStyle(color: white, fontSize: 8)),
+                      ],
+                    ),
+                  ),
+                ],
+              )),
+          SizedBox(height: 10),
+          Container(
+              width: size.width * 0.9,
+              height: size.height * 0.1,
+              /* color: purple, */
+              child: Row(
+                children: [
+                  Container(
+                      margin: EdgeInsets.all(25),
+                      child: Icon(
+                        Icons.music_note,
+                        color: white,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Column(
+                      children: [
+                        Text("Spotify Subscr.",
+                            style: TextStyle(color: white, fontSize: 15)),
+                        Text("Subscription",
+                            style: TextStyle(color: Colors.grey, fontSize: 12)),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 135,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Column(
+                      children: [
+                        Text("- £24.00",
+                            style: TextStyle(color: white, fontSize: 15)),
+                        Text("12 March 2021",
+                            style: TextStyle(color: white, fontSize: 8)),
+                      ],
+                    ),
+                  ),
+                ],
+              )),
+          SizedBox(height: 10),
+          Container(
+              width: size.width * 0.9,
+              height: size.height * 0.1,
+              /* color: purple, */
+              child: Row(
+                children: [
+                  Container(
+                      margin: EdgeInsets.all(25),
+                      child: Icon(
+                        Icons.music_note,
+                        color: white,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Column(
+                      children: [
+                        Text("Spotify Subscr.",
+                            style: TextStyle(color: white, fontSize: 15)),
+                        Text("Subscription",
+                            style: TextStyle(color: Colors.grey, fontSize: 12)),
                       ],
                     ),
                   ),

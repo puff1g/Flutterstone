@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertestone/Style/Variables.dart';
 
 class Cappbar extends StatefulWidget {
   Cappbar({Key key}) : super(key: key);
@@ -12,6 +13,7 @@ class _CappbarState extends State<Cappbar> {
   Widget build(BuildContext context) {
     return Container(
       child: BottomAppBar(
+        color: theclr,
         shape: CircularNotchedRectangle(),
         child: Container(
           height: 75,
@@ -22,7 +24,7 @@ class _CappbarState extends State<Cappbar> {
               IconButton(
                 iconSize: 30.0,
                 padding: EdgeInsets.only(left: 28.0),
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.home, color: ioicon),
                 onPressed: () {
                   setState(() {});
                 },
@@ -30,7 +32,7 @@ class _CappbarState extends State<Cappbar> {
               IconButton(
                 iconSize: 30.0,
                 padding: EdgeInsets.only(right: 28.0),
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.search, color: ioicon),
                 onPressed: () {
                   setState(() {});
                 },
@@ -38,7 +40,7 @@ class _CappbarState extends State<Cappbar> {
               IconButton(
                 iconSize: 30.0,
                 padding: EdgeInsets.only(left: 28.0),
-                icon: Icon(Icons.notifications),
+                icon: Icon(Icons.notifications, color: ioicon),
                 onPressed: () {
                   setState(() {});
                 },
@@ -46,7 +48,7 @@ class _CappbarState extends State<Cappbar> {
               IconButton(
                 iconSize: 30.0,
                 padding: EdgeInsets.only(right: 28.0),
-                icon: Icon(Icons.list),
+                icon: Icon(Icons.list, color: ioicon),
                 onPressed: () {
                   setState(() {});
                 },

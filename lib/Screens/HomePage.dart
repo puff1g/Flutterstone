@@ -7,8 +7,6 @@ import 'package:fluttertestone/Components/UsersLists.dart';
 import 'package:fluttertestone/Components/space.dart';
 import 'package:fluttertestone/Style/Variables.dart';
 
-/* import 'package:fluttertestone/sizehelper.dart';
-import 'package:credit_card/flutter_credit_card.dart'; */
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -21,63 +19,58 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return new Scaffold(
-        appBar: AppBar(
-          backgroundColor: white,
-          elevation: 0,
-          title: Text(
-            "Hi, Jenny!",
-            style: TextStyle(color: black),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: Cappbar(),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            pinned: true,
+            backgroundColor: white,
+            title: Text(
+              "Hi, Jenny!",
+              style: TextStyle(color: black),
+            ),
           ),
-          actions: [
-            IconButton(
-                icon: Icon(Icons.chat_bubble_outline, color: black),
-                tooltip: "Show",
-                onPressed: () {
-                  SnackBar(
-                    content: Text("SNACK"),
-                  );
-                })
-          ],
-        ),
-        extendBody: true,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: Cappbar(),
-        body: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              backgroundColor: white,
-              title: Container(
-                  child: Container(
-                child: Container(
-                  height: size.height * 0.25,
-                  width: size.width * 0.85,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(45),
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Colors.red,
-                        Colors.purple,
-                        Colors.blue,
-                      ],
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Container(
+                    child: Column(
+                  children: [
+                    CreditCard(),
+                    Spacingg(),
+                    Container(
+                      margin: EdgeInsets.only(right: 230),
+                      child: Text("Send money to:",
+                          style: TextStyle(color: Colors.grey)),
                     ),
-                  ),
-                ),
-              )),
-              expandedHeight: 550,
-              collapsedHeight: 550,
+                    UserLists(),
+                    Spacingg(),
+                    Transactionss(),
+                  ],
+                ));
+              },
+              childCount: 1, // 1000 list items
             ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return Transactionss();
-                },
-                childCount: 1, // 1000 list items
-              ),
+          ),
+        ],
+      ),
+      floatingActionButton: Container(
+        height: 65.0,
+        width: 65.0,
+        child: FittedBox(
+          child: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: white,
+            child: Icon(
+              Icons.add,
+              color: ioiconn,
             ),
-          ],
-        ));
+          ),
+        ),
+      ),
+    );
   }
 }
 /* 
